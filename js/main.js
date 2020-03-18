@@ -1,13 +1,6 @@
-const urlCollection = 'products.json';
 const container = document.querySelector('.product__area')
-async function fetchCollectionList () {
-	const response = await fetch(urlCollection)
-	collectionList = await response.json()
-	return collectionList
-}
 
 let pagesBlock = document.querySelector('.pages')
-fetchCollectionList().then(data => {
 	let pagesAmount = (data.length)/10;
 	for(let i = 1; i <= pagesAmount; i++) {
 	pagesBlock.innerHTML += `<li class='page' id='${i}'>${i}</li>`
@@ -32,13 +25,11 @@ fetchCollectionList().then(data => {
 		pages(event.target.id)
 		})
 	}
-})
 
 
 
 
 function pages(page = 1) {
-fetchCollectionList().then(data => {
 	container.innerHTML =''
 	if(page > 0) {
 		page = (page-1)*10
@@ -62,7 +53,7 @@ fetchCollectionList().then(data => {
                 </div>                                
                 <div class="product_photo">
                     <a href="#" class="url--link product__link">
-                        <img src="${data[i].primaryImageUrl}">
+                        <img src="https:${data[i].primaryImageUrl}">
                     </a>                                    
                 </div>
                 <div class="product_description">
@@ -175,6 +166,5 @@ fetchCollectionList().then(data => {
 		}
 		counter()
 	}
-})
 }
 pages()
