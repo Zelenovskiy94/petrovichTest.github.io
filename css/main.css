@@ -1,3 +1,4 @@
+
 .unit--active {
   pointer-events: none;
 }
@@ -77,14 +78,15 @@ transition: 0.3s linear
 	margin: 0 auto;
 	padding: 10px 0;
 	min-width: 0 !important;
-	max-width: 750px;
-}
-
-.container {
-	max-width: 750px;
+	max-width: 1000px;
 }
 body {
 	min-width: 0;
+}
+@media screen and (max-width: 1249px) {
+	.sub_category_page {
+		max-width: 750px;
+	}
 }
 @media screen and (max-width: 990px) {
 	.sub_category_page {
